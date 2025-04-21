@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Adiciona 300ms de delay com jitter de 100ms e 5% de perda de pacote
-tc qdisc add dev eth0 root netem delay 300ms 100ms loss 5%
+# Adiciona delay com variação (jitter) e pequena perda de pacotes
+tc qdisc add dev eth0 root netem delay 500ms 50ms loss 3%
 
 # Inicia o WireGuard
 wg-quick up wg0
