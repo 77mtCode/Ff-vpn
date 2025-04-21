@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# Limpa qualquer configuração anterior
-tc qdisc del dev eth0 root || true
-
-# Adiciona 120ms de delay com jitter leve de 20ms
-tc qdisc add dev eth0 root netem delay 120ms 20ms distribution normal
+# Adiciona 300ms de delay com jitter de 100ms e 5% de perda de pacote
+tc qdisc add dev eth0 root netem delay 300ms 100ms loss 5%
 
 # Inicia o WireGuard
 wg-quick up wg0
