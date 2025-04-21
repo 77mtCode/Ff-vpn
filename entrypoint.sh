@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Adiciona 200ms de delay no tráfego da porta do Free Fire (por exemplo, 10000-10010)
-tc qdisc add dev eth0 root netem delay 200ms
+# Adiciona 100ms de delay no tráfego da porta do Free Fire (por exemplo, 10000-10010)
+tc qdisc add dev eth0 root netem delay 100ms
 
 # Inicia o WireGuard
 wg-quick up wg0
